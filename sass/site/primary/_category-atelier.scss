@@ -10,3 +10,10 @@ a{
 .texteBleu {
     color: blue;
 }
+
+.conteneur-atelier {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(11, 1fr);
+  }
+  
