@@ -14,6 +14,7 @@ $query1 = new WP_Query( $args );
 
 // echo '<div class ="conteneur-nouvelles">';
 // The 2nd Loop
+$i = 1;
 echo '<div class = "conteneur-atelier" >';
 while ( $query1->have_posts() ) {
             $query1->the_post();
@@ -48,7 +49,15 @@ while ( $query1->have_posts() ) {
                 $heure = 4;
             }
 
-            echo '<div class ="posts-atelier" style = "grid-area:'. $heure . "/" . $auteur . "/" . $heure . "/" . $auteur .'">';
+            $heuredebut = $heure +1;
+            $heurefin = $heure + 2;
+            //$heurefin = $heure + 2; Ça fait ce que vous demandez mais ça crée un overlapping entre les cellules que je n'ai pas réussi à régler
+
+            
+            $i = $i + 1;
+
+            echo '<h3 class="auteurcouleur'. $i . '" style = "grid-area:1/' . $auteur . "/1/" . $auteur .'">'. get_the_author_meta( 'display_name', $post->post_author ) . '</h3>';
+            echo '<div class ="posts-atelier" style = "grid-area:'. $heuredebut . "/" . $auteur . "/" . $heurefin . "/" . $auteur .'">';
             echo '<p><a href ="' . get_permalink($id) . '">' . get_the_title() . "</p><p>" .get_post_field('post_name') . "</p><p>" .get_the_author_meta( 'display_name', $post->post_author )   . '</a></p>';
             echo '</div>';
 }

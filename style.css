@@ -244,8 +244,36 @@ a {
       grid-template-rows: repeat(11, 1fr);
 }
 
-.posts-atelier {
+.posts-atelier, .conteneur-atelier h3 {
   border: 1px solid grey;
+}
+
+.posts-atelier p, .conteneur-atelier h3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.auteurcouleur6 {
+  background-color: #105f1b;
+}
+
+.auteurcouleur17 {
+  background-color: #1fb634;
+}
+
+.auteurcouleur10 {
+  background-color: #2cdc45;
+}
+
+.auteurcouleur13 {
+  background-color: #84ea92;
 }
 
 /*--------------------------------------------------------------
