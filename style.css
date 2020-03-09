@@ -117,10 +117,6 @@
   display: block;
 }
 
-.entry-title, .post-edit-link, #masthead {
-  display: none;
-}
-
 .post-thumbnail:first-of-type {
   width: 100%;
   height: 30vh;
@@ -221,6 +217,11 @@
 
 .texte-nouvelle2 button:focus {
   background-color: #ff5656;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 /*--------------------------------------------------------------
