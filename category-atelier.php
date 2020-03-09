@@ -7,9 +7,9 @@
 
 $args = array(
     "category_name" => "atelier",
-    "posts_per_page" => 10,
-    "orderby" => "date",
-    "order" => "DSC"
+    "posts_per_page" => -1,
+    "orderby" => "name",
+    "order" => "ASC"
 );
 $query1 = new WP_Query( $args );
 
@@ -18,7 +18,7 @@ $query1 = new WP_Query( $args );
 while ( $query1->have_posts() ) {
             $query1->the_post();
             echo '<div class ="posts-atelier">';
-            echo '<h3> <a href ="' . get_permalink($id) . '">' . get_the_title() . '</a></h3>';
+            echo '<h3> <a href ="' . get_permalink($id) . '">' . get_the_title() . " ________<span class='texteRouge'> " .get_post_field('post_name') . " </span><span class='texteBleu'>________ " .get_the_author_meta( 'display_name', $post->post_author )   . '</span></a></h3>';
             echo '</div>';
 }
 // echo '</div>';
